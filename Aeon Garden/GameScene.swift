@@ -86,7 +86,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let backgroundSmoke2 = SKEmitterNode(fileNamed: "AeonOceanSparkle.sks") {
             backgroundSmoke2.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
             backgroundSmoke2.zPosition = -1
-            backgroundSmoke2.particlePositionRange = CGVector(dx: self.size.width, dy: self.size.height)
+            backgroundSmoke2.particlePositionRange = CGVector(dx: self.size.width * 2, dy: self.size.height * 2)
             backgroundSmoke2.advanceSimulationTime(5)
             self.addChild(backgroundSmoke2)
         }
