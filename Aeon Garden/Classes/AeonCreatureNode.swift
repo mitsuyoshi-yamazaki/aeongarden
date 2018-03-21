@@ -281,19 +281,8 @@ class AeonCreatureNode: SKNode {
         self.physicsBody?.mass = 1
         self.physicsBody?.linearDamping = 0.5
         self.physicsBody?.angularDamping = 0
+    
         
-        /* let sensorPhysicsNode = SKNode()
-        sensorPhysicsNode.physicsBody = SKPhysicsBody(circleOfRadius:60)
-        sensorPhysicsNode.physicsBody?.categoryBitMask = CollisionTypes.sensor.rawValue
-        sensorPhysicsNode.physicsBody?.collisionBitMask = 0
-        sensorPhysicsNode.physicsBody?.contactTestBitMask = CollisionTypes.creature.rawValue
-        sensorPhysicsNode.physicsBody?.affectedByGravity = false
-        sensorPhysicsNode.physicsBody?.isDynamic = true
-        sensorPhysicsNode.physicsBody?.pinned = true
-        self.addChild(sensorPhysicsNode) */
-       
-        
-       
         // Generate limbs
         limbOne = SKSpriteNode(imageNamed: limbOneShape)
         self.addChild(limbOne)
@@ -526,8 +515,8 @@ class AeonCreatureNode: SKNode {
         self.physicsBody?.linearDamping = 0.5
         self.physicsBody?.angularDamping = 0
         
-        /*
-         let sensorPhysicsNode = SKNode()
+        
+        let sensorPhysicsNode = SKNode()
         sensorPhysicsNode.physicsBody = SKPhysicsBody(circleOfRadius:40)
         sensorPhysicsNode.physicsBody?.categoryBitMask = CollisionTypes.sensor.rawValue
         sensorPhysicsNode.physicsBody?.collisionBitMask = 0
@@ -536,7 +525,7 @@ class AeonCreatureNode: SKNode {
         sensorPhysicsNode.physicsBody?.isDynamic = true
         sensorPhysicsNode.physicsBody?.pinned = true
         self.addChild(sensorPhysicsNode)
- */
+
         
         // Define colors
         
@@ -980,7 +969,6 @@ class AeonCreatureNode: SKNode {
             
             child.run(SKAction.repeatForever(SKAction.sequence([wiggleAround,wiggleAroundBack])),withKey:"Wiggling")
         }
-        
         
     }
     

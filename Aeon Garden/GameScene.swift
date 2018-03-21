@@ -76,13 +76,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(cameraNode)
         self.camera = cameraNode
         
-        if let backgroundSmoke = SKEmitterNode(fileNamed: "AeonSmokeParticle.sks") {
+        /* if let backgroundSmoke = SKEmitterNode(fileNamed: "AeonSmokeParticle.sks") {
             backgroundSmoke.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
             backgroundSmoke.zPosition = -2
             backgroundSmoke.particlePositionRange = CGVector(dx: self.size.width, dy: self.size.height)
             backgroundSmoke.advanceSimulationTime(5)
             self.addChild(backgroundSmoke)
-        }
+        } */
         if let backgroundSmoke2 = SKEmitterNode(fileNamed: "AeonOceanSparkle.sks") {
             backgroundSmoke2.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
             backgroundSmoke2.zPosition = -1
@@ -201,23 +201,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     }
                 }
             }
-        }
-        
-        if (contact.bodyA.categoryBitMask == CollisionTypes.sensor.rawValue && contact.bodyB.categoryBitMask == CollisionTypes.creature.rawValue) {
-            if let creature = contact.bodyA.node?.parent as? AeonCreatureNode {
-                if (creature.currentState == .randomMovement) {
-                    creature.currentState = .nothing
-                }
-            }
-            
-        } else if (contact.bodyB.categoryBitMask == CollisionTypes.sensor.rawValue && contact.bodyA.categoryBitMask == CollisionTypes.creature.rawValue) {
-            if let creature = contact.bodyB.node?.parent as? AeonCreatureNode {
-                if (creature.currentState == .randomMovement) {
-                    creature.currentState = .nothing
-                }
-            }
-        }
-        
+        }        
         
         if (contact.bodyA.categoryBitMask == CollisionTypes.food.rawValue && contact.bodyB.categoryBitMask == CollisionTypes.creature.rawValue) {
             if let creature = contact.bodyB.node as? AeonCreatureNode, let food = contact.bodyA.node as? AeonFoodNode {

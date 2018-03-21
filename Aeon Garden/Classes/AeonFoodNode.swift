@@ -38,8 +38,6 @@ class AeonFoodNode: SKNode {
         self.name = "aeonFood"
         
         let foodBody = SKSpriteNode(imageNamed: "aeonFoodPellet")
-        //foodBody.color = .green
-        //foodBody.colorBlendFactor = 1
         foodBody.zPosition = 1
         foodBody.name = "AeonFoodSprite"
         self.addChild(foodBody)
